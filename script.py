@@ -60,9 +60,9 @@ from datetime import datetime
 now = datetime.now()
 current_time = now.strftime("%H_%M_%S")
 
-ruta='salidas_api_twitter/'+str(current_time)+'.xlsx'
+ruta='salidas_api_twitter/'+str(current_time)+'.csv'
 
-db.to_excel(ruta, encoding='latin1')
+db.to_csv(ruta, encoding='latin1')
 
 
 # ## Meanincloud
@@ -104,8 +104,8 @@ db['code']=db.apply(lambda row: tipe(row['Texto']), axis=1)
 import datetime
 today = datetime.date.today()
 
-ruta='salidas_api_twitter/polaridad/'+str(today)+'.xlsx'
-db.to_excel(ruta, encoding='latin1')
+ruta='salidas_api_twitter/polaridad/'+str(today)+'.csv'
+db.to_csv(ruta, encoding='latin1')
 
 # aquí damos varios pasos, primero tomar la columna de resultdos y convertirla en un dataframe aparte, con las columnas
 # de tipo y polaridad
