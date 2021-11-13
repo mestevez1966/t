@@ -62,7 +62,7 @@ current_time = now.strftime("%H_%M_%S")
 
 ruta='salidas_api_twitter/'+str(current_time)+'.csv'
 
-db.to_csv(ruta, encoding='latin1')
+db.to_csv(ruta)
 
 
 # ## Meanincloud
@@ -105,7 +105,7 @@ import datetime
 today = datetime.date.today()
 
 ruta='salidas_api_twitter/polaridad/'+str(today)+'.csv'
-db.to_csv(ruta, encoding='latin1')
+db.to_csv(ruta)
 
 # aquí damos varios pasos, primero tomar la columna de resultdos y convertirla en un dataframe aparte, con las columnas
 # de tipo y polaridad
