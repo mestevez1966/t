@@ -1,8 +1,6 @@
-library(httr)
-
 info <- httr::GET("https://api.github.com/repos/mestevez1966/t/git/trees/main?recursive=1")
 
-info_json <- content(info, as = "parsed")
+info_json <- httr::content(info, as = "parsed")
 info_json <- jsonlite::fromJSON(jsonlite::toJSON(info_json))
 
 files <- unlist(info_json$tree$path)
@@ -29,8 +27,3 @@ output$Polaridad <- ifelse(grepl("'polarity': 'P'", output$code), 4,
 ruta <- "/salidas_api_twitter/polaridad/merged/merged.csv"
 
 write.csv2(output, ruta)
-
-
-
-
-
