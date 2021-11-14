@@ -19,6 +19,13 @@ for(i in 1:length(files)) {
 
 output <- do.call(plyr::rbind.fill, lapply(file, as.data.frame))
 
+output$Polaridad <- ifelse(grepl("'polarity': 'P'", output$code), 4, 
+                     ifelse(grepl("'polarity': 'P+'", output$code), 5, 
+                     ifelse(grepl("'polarity': 'NEU'", output$code), 2,
+                     ifelse(grepl("'polarity': 'NONE'", output$code), 3, 
+                     ifelse(grepl("'polarity': 'N'", output$code), 2,
+                     ifelse(grepl("'polarity': 'N+'", output$code), 1, ""))))))
+
 ruta <- "/salidas_api_twitter/polaridad/merged/merged.xlsx"
 
 write.csv2(output, ruta)
