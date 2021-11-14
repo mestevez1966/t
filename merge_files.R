@@ -26,7 +26,7 @@ output$Polaridad <- ifelse(grepl("'polarity': 'P'", output$code), 4,
                      ifelse(grepl("'polarity': 'N'", output$code), 2,
                      ifelse(grepl("'polarity': 'N+'", output$code), 1, ""))))))
 
-ruta <- "/salidas_api_twitter/polaridad/merged/merged.xlsx"
+ruta <- "/salidas_api_twitter/polaridad/merged/merged.csv"
 
 write.csv2(output, ruta)
 
