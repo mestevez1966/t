@@ -1,11 +1,11 @@
-name: tweetbot
+name: mergebot
 
 on:
   schedule:
     - cron: '0 22 * * *'
 
 jobs:
-  tweetbot-post:
+  mergebot-post:
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
