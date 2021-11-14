@@ -2,7 +2,7 @@ name: mergebot
 
 on:
   schedule:
-    - cron: '10 20 * * *'
+    - cron: '00 21 * * *'
 
 jobs:
   mergebot-post:
