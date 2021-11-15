@@ -2,7 +2,7 @@ name: mergebot
 
 on:
   schedule:
-    - cron: '30 11 * * *'
+    - cron: '02 16 * * *'
 
 jobs:
   mergebot-post:
@@ -19,5 +19,5 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add --all
-          git commit -am "add data"
+          git commit -am "Merge files"
           git push 
