@@ -1,3 +1,6 @@
+library(httr)
+library(jsonlite)
+
 info <- httr::GET("https://api.github.com/repos/mestevez1966/t/git/trees/main?recursive=1")
 
 info_json <- httr::content(info, as = "parsed")
