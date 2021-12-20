@@ -1,17 +1,17 @@
-name: mergebot
+name: mergeweek
 
 on:
   schedule:
-    - cron: '55 21 * * *'
-
+    - cron: '15 16 * * *'
+    
 jobs:
-  mergebot-post:
-    runs-on: macOS-11
+  mergeweek-post:
+    runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@master
       - name: Install packages
-        run: Rscript -e 'install.packages(c("httr", "jsonlite"), dependencies = TRUE)'
+        run: Rscript -e 'install.packages("plyr", dependencies = TRUE)'
       - name: Merge files
         run: Rscript merge_files.R
       - name: Commit files
@@ -19,5 +19,5 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add --all
-          git commit -am "Merge files"
-          git push 
+          git commit -am "add data"
+          git push
