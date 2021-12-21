@@ -27,4 +27,4 @@ output$Polaridad <- ifelse(grepl("'polarity': 'P'", output$code), 4,
                      ifelse(grepl("'polarity': 'N'", output$code), 2,
                      ifelse(grepl("'polarity': 'N+'", output$code), 1, ""))))))
 
-save(output, file = "merged.csv")
+write.csv(output, file = "merged.csv")
